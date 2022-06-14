@@ -26,7 +26,7 @@ function agendamento(){
     }
 
 
-    fetch("https://backefront.com.br/api/users", {
+    fetch("banco.json", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -57,4 +57,37 @@ function programacao(){
   },
   body: JSON.stringify()
 })
+}
+
+
+
+function agendarPessoa(){
+  const agendamentoPessoa = {
+    "nome": document.getElementById("agendamentoNome").value,
+    "idade": document.getElementById("agendamentoIdade").value,
+    "filme": document.getElementById("agendamentoFilme").value
+  }
+
+  fetch("banco.json", {method: 'post', body: agendamentoPessoa}).then(r =>{
+    console.log(agendamentoPessoa)
+
+    alert("DEU CERTO KRLLL!!!!")
+  })
+}
+
+function exibirSalas(){
+  const dados = fetch("banco.json")
+  const lista = document.getElementById("listaSalas")
+  lista.innerHTML = " "
+
+  dados.then(d => {
+    resp = d.json()
+    resp.then(r => {
+      r.forEach(a => {
+
+        lista.innerHTML += `<li>${a}</li>`
+        
+      });
+    })
+  } )
 }
