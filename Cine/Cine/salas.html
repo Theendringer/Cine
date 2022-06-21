@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="style.css">
 </head>
 
-<body onload="exibirSalas()">
+<body>
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="index.html" role="tab"
@@ -32,15 +32,15 @@
     </ul>
 
    <div class="container">   
+    <br>
     <div class="input-group">
-        <input type="search" class="form-control rounded" placeholder="Buscar Filme" aria-label="Search" aria-describedby="search-addon" />
+        <input type="search" class="form-control rounded" id="buscarFilme" placeholder="Buscar Filme" aria-label="Search" aria-describedby="search-addon" />
         <button type="button" class="btn btn-outline-primary" id="buscar">Buscar</button>
       </div>
-       <ul id="listaSalas">
-           <li>teste</li>
+       <ul class="list-group-item" id="listaSalas">
        </ul>
    </div>
 
 </body>
-
+<script src="salas.js"></script>
 </html>

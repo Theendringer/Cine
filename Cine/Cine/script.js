@@ -20,7 +20,7 @@ function agendamento(){
     console.log(agendamentoFilme)
 
     body = {
-        "name" : agendamentoNome,
+        "nome" : agendamentoNome,
         "idade" : agendamentoIdade,
         "filme" : agendamentoFilme
     }
